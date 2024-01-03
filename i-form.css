@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+}
+
+* {
+    font-family: Verdana;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.i-form {
+    padding: 1rem;
+}
+
+.i-form-group:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.i-form-label {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.i-form-input {
+    width: 100%;
+    border-radius: 5px;
+    outline: none !important;
+    border: 1px solid grey;
+    padding: .7rem 1rem;
+}
+
+.i-form-input:focus {
+    border-color: blue;
+}
+
+.i-form-group.i-form-required-error input,
+.i-form-group.i-form-range-error input {
+    border-color: red;
+}
+
+.i-form-error {
+    display: none;
+    color: red;
+    margin: .5rem 0 0;
+    font-size: 12px;
+}
+
+.i-form-group.i-form-required-error .i-form-required-mes {
+    display: block;
+}
+
+.i-form-group.i-form-range-error .i-form-range-mes {
+    display: block;
+}
+
+.i-form-btn {
+    padding: .8rem 1rem;
+    border-radius: 5px;
+    background-color: red;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.i-form-btn.i-form-submit {
+    background-color: blue;
+}
+
+.i-form-btn.i-form-disabled {
+    cursor: not-allowed;
+    background-color: grey;
+}

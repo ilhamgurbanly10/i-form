@@ -7,12 +7,47 @@
     <link rel="stylesheet" href="./i-form.css">
 
     <style>
-        
+
+        .form  {
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .form {
+                width: 400px;
+                margin: 2rem auto;
+            }
+        }
+
     </style>
+
 </head>
 <body>
 
-   <section class="">
+   <section class="form">
+
+    <form action="" class="i-form">
+
+        <div class="i-form-group">
+            <label for="name" class="i-form-label">Name</label>
+            <input type="text" name="name" id="name" class="i-form-input" i-form-required i-form-range i-form-min="5" i-form-max="15" >
+            <p class="i-form-error i-form-required-mes">This field is required</p>
+            <p class="i-form-error i-form-range-mes">Minimum 5, maximum 15 characters</p>
+        </div>
+
+        <div class="i-form-group">
+            <label for="surname" class="i-form-label">Surname</label>
+            <input type="text" name="surname" id="surname" class="i-form-input" i-form-required i-form-range i-form-min="5" i-form-max="15">
+            <p class="i-form-error i-form-required-mes">This field is required</p>
+            <p class="i-form-error i-form-range-mes">Minimum 5, maximum 15 characters</p>
+        </div>
+
+        <div class="i-form-group">
+            <button type="submit" class="i-form-btn i-form-submit">Register</button>
+        </div>
+
+
+    </form>
 
     
 
