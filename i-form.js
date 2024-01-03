@@ -11,7 +11,7 @@ const iFrom = () => {
         
         const checkRequire = (e) => {
             const inp = e.target;
-            const val = inp.value;
+            const val = inp.value.trim();
             const group = inp.closest('.i-form-group');
             if (val === "") { 
                 if (!group.classList.contains('i-form-required-error')) ++errorCount;
@@ -26,7 +26,7 @@ const iFrom = () => {
         }
 
         const checkRequireOnSubmit = (inp) => {
-            const val = inp.value;
+            const val = inp.value.trim();
             const group = inp.closest('.i-form-group');
             if (val === "") { 
                 if (!group.classList.contains('i-form-required-error')) ++errorCount;
@@ -50,7 +50,7 @@ const iFrom = () => {
         
         const checkRange = (e) => {
             const inp = e.target;
-            const val = inp.value;
+            const val = inp.value.trim();
             const len = val.length;
             const min = Number(inp.getAttribute('i-form-min'));
             const max = Number(inp.getAttribute('i-form-max'));
