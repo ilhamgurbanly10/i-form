@@ -43,6 +43,27 @@
         </div>
 
         <div class="i-form-group">
+            <label for="password" class="i-form-label">Password</label>
+            <div class="i-form-input-container">
+                <input type="password" name="password" id="password" class="i-form-input" i-form-required i-form-range i-form-min="5" i-form-max="15">
+                <span class="i-form-icon i-form-password-icon"></span>
+            </div>
+            <p class="i-form-error i-form-required-mes">This field is required</p>
+            <p class="i-form-error i-form-range-mes">Minimum 5, maximum 15 characters</p>
+        </div>
+
+        <div class="i-form-group">
+            <label for="confirmPassword" class="i-form-label">Confirm Password</label>
+            <div class="i-form-input-container">
+                <input type="password" name="confirmPassword" id="confirmPassword" class="i-form-input" i-form-confirmation="password" i-form-required i-form-range i-form-min="5" i-form-max="15">
+                <span class="i-form-icon i-form-password-icon"></span>
+            </div>
+            <p class="i-form-error i-form-required-mes">This field is required</p>
+            <p class="i-form-error i-form-range-mes">Minimum 5, maximum 15 characters</p>
+            <p class="i-form-error i-form-confirmation-mes">Password does not match</p>
+        </div>
+
+        <div class="i-form-group">
             <button type="submit" class="i-form-btn i-form-submit">Register</button>
         </div>
 
