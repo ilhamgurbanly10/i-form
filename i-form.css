@@ -39,15 +39,19 @@ body {
 .i-form-label {
     display: block;
     margin-bottom: .5rem;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
+}
+
+.i-form-label-required-sign {
+    color: red;
 }
 
 .i-form-input {
     width: 100%;
     border-radius: 5px;
     outline: none !important;
-    border: 1px solid grey;
+    border: 1px solid rgb(172, 172, 172);
     padding: .7rem 1rem;
 }
 

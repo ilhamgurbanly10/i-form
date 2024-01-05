@@ -19,6 +19,10 @@
             }
         }
 
+        section ul li {
+            margin-top: .5rem;
+        }
+
     </style>
 
 </head>
@@ -29,28 +33,28 @@
     <form action="" class="i-form">
 
         <div class="i-form-group">
-            <label for="name" class="i-form-label">Name</label>
+            <label for="name" class="i-form-label">Name <span class="i-form-label-required-sign">*</span></label>
             <input type="text" name="name" id="name" class="i-form-input" i-form-required i-form-range i-form-min="5" i-form-max="15" >
             <p class="i-form-error i-form-required-mes">This field is required</p>
             <p class="i-form-error i-form-range-mes">Minimum 5, maximum 15 characters</p>
         </div>
 
         <div class="i-form-group">
-            <label for="surname" class="i-form-label">Surname</label>
+            <label for="surname" class="i-form-label">Surname <span class="i-form-label-required-sign">*</span></label>
             <input type="text" name="surname" id="surname" class="i-form-input" i-form-required i-form-range i-form-min="5" i-form-max="15">
             <p class="i-form-error i-form-required-mes">This field is required</p>
             <p class="i-form-error i-form-range-mes">Minimum 5, maximum 15 characters</p>
         </div>
 
         <div class="i-form-group">
-            <label for="email" class="i-form-label">Email</label>
+            <label for="email" class="i-form-label">Email <span class="i-form-label-required-sign">*</span></label>
             <input type="email" name="email" id="email" class="i-form-input" i-form-required i-form-regexp="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
             <p class="i-form-error i-form-required-mes">This field is required</p>
             <p class="i-form-error i-form-regexp-mes">Email is invalid</p>
         </div>
 
         <div class="i-form-group">
-            <label for="password" class="i-form-label">Password</label>
+            <label for="password" class="i-form-label">Password <span class="i-form-label-required-sign">*</span></label>
             <div class="i-form-input-container">
                 <input type="password" name="password" id="password" class="i-form-input" i-form-required i-form-regexp="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])" i-form-range i-form-min="5" i-form-max="15">
                 <span class="i-form-icon i-form-password-icon"></span>
@@ -61,7 +65,7 @@
         </div>
 
         <div class="i-form-group">
-            <label for="confirmPassword" class="i-form-label">Confirm Password</label>
+            <label for="confirmPassword" class="i-form-label">Confirm Password <span class="i-form-label-required-sign">*</span></label>
             <div class="i-form-input-container">
                 <input type="password" name="confirmPassword" id="confirmPassword" class="i-form-input" i-form-regexp="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).*$" i-form-confirmation="password" i-form-required i-form-range i-form-min="5" i-form-max="15">
                 <span class="i-form-icon i-form-password-icon"></span>
@@ -79,7 +83,17 @@
 
     </form>
 
-    
+   </section>
+
+   <section>
+
+        <ul>
+            <li>i-form-required: boolean attribute for required fields</li>
+            <li>i-form-range: boolean attribute for range fields (i-form-min and i-form-max attributes are for minimum and maximum ranges)</li>
+            <li>i-form-regexp: attribute for regular expression validations, you only have to pass regular expression in this attribute</li>
+            <li>i-form-confirmation: attribute for confirmation, target element id for confirmation must be added to attribute (i-form-confirmation="password")</li>
+            <li>Error message classes: i-form-required-mes, i-form-range-mes, i-form-regexp-mes, i-form-confirmation-mes</li>
+        </ul>
 
    </section>
 

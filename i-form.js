@@ -106,7 +106,7 @@ const iFrom = () => {
             const min = Number(inp.getAttribute('i-form-min'));
             const max = Number(inp.getAttribute('i-form-max'));
             const group = inp.closest('.i-form-group');
-            if (val !== targetVal && !group.classList.contains('i-form-required-error') && !group.classList.contains('i-form-range-error')  && !group.classList.contains('i-form-regexp-error')) {
+            if (val !== targetVal && !group.classList.contains('i-form-required-error') && !group.classList.contains('i-form-range-error')) {
                 if (!group.classList.contains('i-form-confirmation-error')) ++errorCount;
                 group.classList.add('i-form-confirmation-error') 
                 disableSubmit();
@@ -135,7 +135,7 @@ const iFrom = () => {
             const val = inp.value.trim();
             const regexp = e.target.getAttribute('i-form-regexp');
             const group = inp.closest('.i-form-group');
-            if (!group.classList.contains('i-form-required-error') && !group.classList.contains('i-form-range-error') && !validateRegexp(val, regexp)) {
+            if (!group.classList.contains('i-form-required-error') && !group.classList.contains('i-form-range-error') && !group.classList.contains('i-form-confirmation-error') && !validateRegexp(val, regexp)) {
                 if (!group.classList.contains('i-form-regexp-error')) ++errorCount;
                 group.classList.add('i-form-regexp-error') 
                 disableSubmit();
