@@ -57,7 +57,8 @@ body {
 
 .i-form-group.i-form-required-error input,
 .i-form-group.i-form-range-error input,
-.i-form-group.i-form-confirmation-error input {
+.i-form-group.i-form-confirmation-error input,
+.i-form-group.i-form-regexp-error input {
     border-color: red;
 }
 
@@ -77,6 +78,10 @@ body {
 }
 
 .i-form-group.i-form-confirmation-error .i-form-confirmation-mes {
+    display: block;
+}
+
+.i-form-group.i-form-regexp-error .i-form-regexp-mes {
     display: block;
 }
 

@@ -106,7 +106,7 @@ const iFrom = () => {
             const min = Number(inp.getAttribute('i-form-min'));
             const max = Number(inp.getAttribute('i-form-max'));
             const group = inp.closest('.i-form-group');
-            if (val !== targetVal && val !== "" && !((len < min && min && val !== "") || (len > max && max && val !== ""))) {
+            if (val !== targetVal && !group.classList.contains('i-form-required-error') && !group.classList.contains('i-form-range-error')  && !group.classList.contains('i-form-regexp-error')) {
                 if (!group.classList.contains('i-form-confirmation-error')) ++errorCount;
                 group.classList.add('i-form-confirmation-error') 
                 disableSubmit();
@@ -121,6 +121,35 @@ const iFrom = () => {
 
         confirmationFields.forEach((f) => { f.addEventListener('input', checkConfirmation); })
         // end-confirmation
+
+        // regexp
+        const regexpFields = el.querySelectorAll('.i-form-input[i-form-regexp]');
+
+        const validateRegexp = (val, regexpStr) => {
+            const regexp = new RegExp(regexpStr, 'g');
+            return regexp.test(String(val));
+          };
+
+        const checkRegexp = (e) => {
+            const inp = e.target;
+            const val = inp.value.trim();
+            const regexp = e.target.getAttribute('i-form-regexp');
+            const group = inp.closest('.i-form-group');
+            if (!group.classList.contains('i-form-required-error') && !group.classList.contains('i-form-range-error') && !validateRegexp(val, regexp)) {
+                if (!group.classList.contains('i-form-regexp-error')) ++errorCount;
+                group.classList.add('i-form-regexp-error') 
+                disableSubmit();
+            }
+            else { 
+                if (group.classList.contains('i-form-regexp-error')) --errorCount;
+                group.classList.remove('i-form-regexp-error');
+                if (errorCount < 1) enableSubmit();
+            }
+            
+        }
+
+        regexpFields.forEach((f) => { f.addEventListener('input', checkRegexp); })
+        // end-regexp
 
         // submit
         const finishIsAllowed = () => {
